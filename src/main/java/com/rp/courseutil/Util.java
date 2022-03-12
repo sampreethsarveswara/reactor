@@ -26,8 +26,12 @@ public class Util {
   }
 
   public static void sleepSecond(int seconds) {
+    sleepMillis(seconds * 1000);
+  }
+
+  public static void sleepMillis(int milliSec) {
     try {
-      Thread.sleep(seconds * 1000);
+      Thread.sleep(milliSec);
     } catch (InterruptedException e) {
       e.printStackTrace();
     }

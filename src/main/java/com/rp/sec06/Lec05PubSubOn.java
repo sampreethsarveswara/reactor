@@ -16,7 +16,7 @@ public class Lec05PubSubOn {
 
     flux
             .publishOn(Schedulers.parallel())
-            .doOnNext(i -> printThreadName("next " + i))
+            .doOnNext(i -> printThreadName("doNext " + i))
             .subscribeOn(Schedulers.boundedElastic())
             .subscribe(v -> printThreadName("sub " + v));
 
